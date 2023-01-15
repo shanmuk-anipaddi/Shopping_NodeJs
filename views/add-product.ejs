@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= pageTitle %></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/css/add-product.css" />
+    <link rel="stylesheet" href="/css/nav.css" />
+  </head>
+  <body>
+    <%- include('includes/nav.html') %>
+
+    <div class="container">
+      <form action="/add-product" method="POST">
+        <label for="fname">First Name</label>
+        <input
+          type="text"
+          id="fname"
+          name="productName"
+          placeholder="Product Name.."
+        />
+
+        <input type="submit" value="Submit" />
+      </form>
+    </div>
+  </body>
+</html>
