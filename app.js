@@ -6,7 +6,7 @@ const bodyParser = require("body-parser");
 
 const app = express();
 
-const adminData = require("./Routes/admin");
+const adminRoutes = require("./Routes/admin");
 const shopRoutes = require("./Routes/shop");
 
 //Tell Express use this Template
@@ -29,7 +29,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "public")));
 
 //app.use("./admin", adminRoutes);
-app.use(adminData.routes);
+app.use(adminRoutes);
 app.use(shopRoutes);
 
 app.use((req, res, next) => {
