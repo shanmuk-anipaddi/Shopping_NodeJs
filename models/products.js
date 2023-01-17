@@ -1,15 +1,20 @@
 const products = [];
 
 module.exports = class Product {
-  constructor(t) {
+  constructor(t,i) {
+    //console.log("Model Contructor : ", t);
     this.title = t;
+    this.image = i;
+    
   }
 
   save() {
     products.push(this);
+    
   }
 
   static fetchAll() {
-    return this.products;
+    //console.log("Model Data : ", products);
+    return products;
   }
 };

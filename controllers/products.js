@@ -11,10 +11,11 @@ exports.getProducts = (req, res, next) => {
 };
 
 exports.postAddProduct = (req, res, next) => {
-  const addProduct = new Product(req.body.productName);
+  //console.log("Product added : ", req.body.productName);
+
+  const addProduct = new Product(req.body.productName, req.body.productImage);
   addProduct.save();
   //products.push({ title: req.body.productName }); //handled by model
-  //console.log(req.body.productName); //handled by model
   res.redirect("/");
 };
 
@@ -26,7 +27,7 @@ exports.getAddedProducts = (req, res, next) => {
     prods: getAddedProducts,
     pageTitle: "Shop",
     path: "/",
-    hasProducts: getAddedProducts.length > 0,
+    hasProducts: getAddedProducts ? getAddedProducts.length > 0 : 0,
     activeShop: true,
     productCSS: true,
   });

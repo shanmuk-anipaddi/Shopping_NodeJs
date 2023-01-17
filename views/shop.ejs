@@ -6,9 +6,19 @@
   </head>
   <body>
     <%- include('includes/nav.html') %>
-    
+
     <div class="wrapper">
+      <% if(hasProducts > 0){ %> <% for(let products of prods){ %>
       <div class="product">
+        <img
+          src="<%= products.image %>"
+          alt=""
+        />
+        <h4 class="product-name"><%= products.title %></h4>
+        <button class="btn btn-buy">Add to cart</button>
+      </div>
+      <% } %> <% } %>
+      <!-- <div class="product">
         <img src="https://placeimg.com/400/400/animals" alt="" />
         <h4 class="product-name">Cotton candy jelly-o gummies</h4>
         <button class="btn btn-buy">Add to cart</button>
@@ -48,6 +58,8 @@
         <img src="https://placeimg.com/409/402/animals" alt="" />
         <h4 class="product-name">Product name</h4>
         <button class="btn btn-buy">Add to cart</button>
-      </div>
+      </div> -->
     </div>
     <%- include('includes/end.html') %>
+  </body>
+</html>
